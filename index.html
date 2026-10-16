@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MOO//PHASE — $MOO</title>
+<meta name="description" content="MOO//PHASE ($MOO) — a cow, a beam, a new phase. Solana memecoin.">
+<meta name="theme-color" content="#07040c">
+<meta property="og:title" content="MOO//PHASE — $MOO">
+<meta property="og:description" content="a cow. a beam. a new phase.">
+<meta property="og:image" content="assets/img/og-image.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/img/og-image.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Silkscreen:wght@400;700&family=Onest:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/moo-main.webp" fetchpriority="high">
+<link rel="stylesheet" href="assets/css/style.css">
+<!-- ======= PLACEHOLDERS LIVE HERE: assets/js/site-config.js ======= -->
+<script src="assets/js/site-config.js"></script>
+</head>
+<body class="is-loading">
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-tg" viewBox="0 0 24 24"><path fill="currentColor" d="M21.9 4.3 18.6 20c-.2 1.1-.9 1.4-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.2-8.3c.4-.4-.1-.6-.6-.2L6 13.6 1.1 12c-1.1-.3-1.1-1.1.2-1.6L20.5 3c.9-.3 1.7.2 1.4 1.3z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M17.8 2.5h3.3l-7.2 8.2 8.5 10.8h-6.6l-5.2-6.8-6 6.8H1.3l7.7-8.8L.9 2.5h6.8l4.7 6.2 5.4-6.2zm-1.2 17.1h1.8L6.6 4.3H4.6l12 15.3z"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18M7 15l4-5 3 3 6-7"/></symbol>
+  <symbol id="i-pill" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2.5" y="7" width="19" height="10" rx="5" transform="rotate(-35 12 12)"/><path d="m9.2 7.9 5.6 8.2" /></g></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="8" y="8" width="13" height="13" rx="3"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="m4 12.5 5 5L20 6.5"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M12 20V5m-6 6 6-6 6 6"/></symbol>
+</svg>
+
+<!-- ================= PRELOADER ================= -->
+<div id="loader" aria-live="polite">
+  <canvas id="loaderCanvas"></canvas>
+  <div class="loader-scan"></div>
+  <div class="loader-ui">
+    <div class="loader-title" data-text="MOO//PHASE">MOO//PHASE</div>
+    <div class="loader-bar"><i id="loaderFill"></i></div>
+    <div class="loader-meta"><span>PHASING IN</span><span id="loaderPct">0%</span></div>
+  </div>
+  <button class="loader-skip" type="button">tap to skip</button>
+</div>
+
+<!-- custom cursor -->
+<div class="ufo-cursor" aria-hidden="true"><img src="assets/img/ufo.webp" alt=""><i></i></div>
+<div id="fx" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="hdr" id="hdr">
+  <a href="#top" class="logo" data-scroll>
+    <img src="assets/img/icon-192.png" alt="" width="40" height="40">
+    <span>MOO<b>//</b>PHASE</span>
+  </a>
+  <nav class="nav" id="nav">
+    <a href="#lore" data-scroll>Lore</a>
+    <a href="#abduction" data-scroll>Beam</a>
+    <a href="#buy" data-scroll>Buy</a>
+    <a href="#chart" data-scroll>Chart</a>
+    <a href="#phases" data-scroll>Phases</a>
+    <div class="nav-soc">
+      <a class="soc" data-link="telegramUrl" target="_blank" rel="noopener" aria-label="Telegram"><svg><use href="#i-tg"/></svg><span>TG</span></a>
+      <a class="soc" data-link="twitterUrl" target="_blank" rel="noopener" aria-label="X"><svg><use href="#i-x"/></svg><span>X</span></a>
+    </div>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+</header>
+
+<main id="top">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <canvas class="holo-gl" id="heroGL"></canvas>
+  <div class="hero-sky"></div>
+  <div class="hero-floor"><div class="floor-grid"></div></div>
+  <div class="hero-bubbles" id="heroBubbles"></div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="chip glitch-chip"><span class="dot"></span> SOLANA · $MOO · SIGNAL FOUND</div>
+      <h1 class="hero-title" aria-label="MOO//PHASE">
+        <span class="ht-line" data-text="MOO">MOO</span>
+        <span class="ht-line ht-2" data-text="//PHASE">//PHASE</span>
+      </h1>
+      <p class="hero-sub">a cow. a beam. <em>a new phase.</em></p>
+
+      <div class="cta-row">
+        <a class="jelly jelly--main" data-link="pumpFunUrl" target="_blank" rel="noopener">
+          <svg><use href="#i-pill"/></svg><span>BUY ON PUMP.FUN</span>
+        </a>
+        <a class="jelly jelly--dex" data-link="dexUrl" target="_blank" rel="noopener">
+          <svg><use href="#i-chart"/></svg><span>DEX</span>
+        </a>
+      </div>
+
+      <button class="ca-pod" type="button" data-copy-ca>
+        <span class="ca-tag">CA</span>
+        <span class="ca-val" data-ca>YOUR_CONTRACT_ADDRESS_HERE</span>
+        <span class="ca-btn"><svg class="ic-copy"><use href="#i-copy"/></svg><svg class="ic-ok"><use href="#i-check"/></svg></span>
+      </button>
+    </div>
+
+    <div class="hero-visual">
+      <div class="holo-card" id="holoCard">
+        <div class="hc-rim"></div>
+        <div class="hc-inner">
+          <img class="hc-img" src="assets/img/moo-main.webp" alt="MOO//PHASE — a cow abducted by a three-eyed holographic UFO" width="1200" height="1200">
+          <div class="hc-foil"></div>
+          <div class="hc-scan"></div>
+        </div>
+        <img class="hc-pop hc-ufo" src="assets/img/ufo.webp" alt="" aria-hidden="true">
+        <img class="hc-pop hc-h1" src="assets/img/heart1.png" alt="" aria-hidden="true">
+        <img class="hc-pop hc-h2" src="assets/img/heart2.png" alt="" aria-hidden="true">
+        <img class="hc-pop hc-b1" src="assets/img/bubble.png" alt="" aria-hidden="true">
+        <div class="hc-label">$MOO</div>
+      </div>
+    </div>
+  </div>
+  <a href="#tape" class="scroll-cue" data-scroll aria-label="Scroll down"><span>SCROLL</span><i></i></a>
+</section>
+
+<!-- ================= TAPES ================= -->
+<div class="tapes" id="tape" aria-hidden="true">
+  <div class="tape tape--a"><div class="tape-track">MOO//PHASE ✦ $MOO ✦ BEAM ME UP ✦ MOO//PHASE ✦ $MOO ✦ BEAM ME UP ✦ MOO//PHASE ✦ $MOO ✦ BEAM ME UP ✦&nbsp;</div></div>
+  <div class="tape tape--b"><div class="tape-track">PHASE SHIFT ✦ 3 EYES ON YOU ✦ PHASE SHIFT ✦ 3 EYES ON YOU ✦ PHASE SHIFT ✦ 3 EYES ON YOU ✦&nbsp;</div></div>
+</div>
+
+<!-- ================= LORE ================= -->
+<section class="sec lore" id="lore">
+  <div class="sec-head" data-reveal>
+    <span class="kicker">// 01 · LORE</span>
+    <h2 class="h2 holo-text">THE PHASE</h2>
+  </div>
+  <div class="lore-grid">
+    <article class="lore-card tilt" data-reveal>
+      <div class="lc-img"><img src="assets/img/scene-herd.webp" alt="A herd of glitch cows under twin UFOs" loading="lazy"></div>
+      <div class="lc-txt"><b>01</b><p>Just a cow. Grazing on pixels.</p></div>
+    </article>
+    <article class="lore-card tilt" data-reveal>
+      <div class="lc-img"><img src="assets/img/scene-abduction.webp" alt="The holographic UFO beams the cow up" loading="lazy"></div>
+      <div class="lc-txt"><b>02</b><p>Three eyes. One beam. Zero escape.</p></div>
+    </article>
+    <article class="lore-card tilt" data-reveal>
+      <div class="lc-img"><img src="assets/img/scene-glitch.webp" alt="The cow glitching between dimensions" loading="lazy"></div>
+      <div class="lc-txt"><b>03</b><p>She didn't vanish. She <em>phased.</em></p></div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= ABDUCTION (sticky scroll scene) ================= -->
+<section class="abduct" id="abduction">
+  <div class="ab-stage">
+    <div class="ab-sky"></div>
+    <div class="ab-floor"><div class="floor-grid"></div></div>
+    <div class="ab-beam"><i></i><i></i><i></i><i></i><i></i></div>
+    <img class="ab-ufo" src="assets/img/ufo.webp" alt="" aria-hidden="true">
+    <img class="ab-cow" src="assets/img/cow.webp" alt="The cow" >
+    <div class="ab-flash"></div>
+    <div class="ab-steps">
+      <div class="ab-step" data-step="0"><span>01</span>SPOTTED</div>
+      <div class="ab-step" data-step="1"><span>02</span>BEAMED</div>
+      <div class="ab-step" data-step="2"><span>03</span>PHASED</div>
+    </div>
+    <div class="ab-hud">
+      <span>ABDUCTION</span>
+      <div class="ab-meter"><i id="abMeter"></i></div>
+      <b id="abPct">0%</b>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DIMENSIONS (3D ring) ================= -->
+<section class="dims" id="dimensions">
+  <div class="dims-stage">
+    <div class="sec-head center">
+      <span class="kicker">// 02 · DIMENSIONS</span>
+      <h2 class="h2 holo-text">EVERY PHASE</h2>
+    </div>
+    <div class="ring-wrap" id="ringWrap">
+      <div class="ring" id="ring">
+        <figure class="ring-card"><img src="assets/img/moo-main.webp" alt="MOO//PHASE original"></figure>
+        <figure class="ring-card"><img src="assets/img/scene-mothership.webp" alt="Mothership beaming cows" loading="lazy"></figure>
+        <figure class="ring-card"><img src="assets/img/scene-moon.webp" alt="Cow on a holographic planet" loading="lazy"></figure>
+        <figure class="ring-card"><img src="assets/img/scene-kaleido.webp" alt="Kaleidoscope cow" loading="lazy"></figure>
+        <figure class="ring-card"><img src="assets/img/scene-herd.webp" alt="The herd" loading="lazy"></figure>
+        <figure class="ring-card"><img src="assets/img/scene-glitch.webp" alt="Glitched cow" loading="lazy"></figure>
+        <figure class="ring-card"><img src="assets/img/scene-abduction.webp" alt="Abduction" loading="lazy"></figure>
+        <figure class="ring-card"><img src="assets/img/holo-marble.webp" alt="UFO skin" loading="lazy"></figure>
+      </div>
+    </div>
+    <div class="drag-hint">← drag to spin →</div>
+  </div>
+</section>
+
+<!-- ================= HOW TO BUY ================= -->
+<section class="sec buy" id="buy">
+  <div class="sec-head" data-reveal>
+    <span class="kicker">// 03 · HOW TO BUY</span>
+    <h2 class="h2 holo-text">GET BEAMED</h2>
+  </div>
+  <div class="buy-grid">
+    <div class="orb tilt" data-reveal><i class="orb-n">1</i><h3>Wallet</h3><p>Install Phantom or any Solana wallet.</p></div>
+    <div class="orb tilt" data-reveal><i class="orb-n">2</i><h3>SOL</h3><p>Fill it with SOL.</p></div>
+    <div class="orb tilt" data-reveal><i class="orb-n">3</i><h3>pump.fun</h3><p>Open $MOO on pump.fun or paste the CA.</p></div>
+    <div class="orb tilt" data-reveal><i class="orb-n">4</i><h3>Phase</h3><p>Swap SOL → $MOO. Welcome aboard.</p></div>
+  </div>
+  <div class="buy-cta" data-reveal>
+    <a class="jelly jelly--main" data-link="pumpFunUrl" target="_blank" rel="noopener"><svg><use href="#i-pill"/></svg><span>BUY $MOO</span></a>
+    <button class="ca-pod ca-pod--sm" type="button" data-copy-ca>
+      <span class="ca-tag">CA</span><span class="ca-val" data-ca>YOUR_CONTRACT_ADDRESS_HERE</span>
+      <span class="ca-btn"><svg class="ic-copy"><use href="#i-copy"/></svg><svg class="ic-ok"><use href="#i-check"/></svg></span>
+    </button>
+  </div>
+</section>
+
+<!-- ================= CHART ================= -->
+<section class="sec chart" id="chart">
+  <div class="sec-head" data-reveal>
+    <span class="kicker">// 04 · CHART</span>
+    <h2 class="h2 holo-text">BEAM READINGS</h2>
+  </div>
+  <div class="viewport" data-reveal>
+    <img class="vp-ufo" src="assets/img/ufo.webp" alt="" aria-hidden="true">
+    <div class="vp-screen">
+      <iframe id="dexFrame" title="$MOO chart on DEX Screener" loading="lazy" allow="clipboard-write"></iframe>
+      <div class="vp-wait" id="dexWait">
+        <img src="assets/img/cow.webp" alt="" aria-hidden="true">
+        <b>CHART PHASES IN AT LAUNCH</b>
+        <a class="jelly jelly--dex" data-link="dexUrl" target="_blank" rel="noopener"><svg><use href="#i-chart"/></svg><span>OPEN DEX</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ROADMAP / PHASES ================= -->
+<section class="sec phases" id="phases">
+  <div class="sec-head" data-reveal>
+    <span class="kicker">// 05 · ROADMAP</span>
+    <h2 class="h2 holo-text">THE PHASES</h2>
+  </div>
+  <div class="track" id="track">
+    <div class="track-beam"><i id="trackFill"></i></div>
+
+    <div class="ph" data-reveal>
+      <div class="ph-scene s1"><div class="ps-floor"></div><img class="ps-cow" src="assets/img/cow.webp" alt=""></div>
+      <div class="ph-txt"><span>PHASE 01</span><h3>GRAZING</h3><p>Launch on pump.fun. Site, X, TG. The herd gathers.</p></div>
+    </div>
+    <div class="ph" data-reveal>
+      <div class="ph-scene s2"><div class="ps-floor"></div><div class="ps-beam"></div><img class="ps-ufo" src="assets/img/ufo.webp" alt=""><img class="ps-cow" src="assets/img/cow.webp" alt=""></div>
+      <div class="ph-txt"><span>PHASE 02</span><h3>SPOTTED</h3><p>Bonding curve complete. Raydium. DEX Screener lit.</p></div>
+    </div>
+    <div class="ph" data-reveal>
+      <div class="ph-scene s3"><div class="ps-beam"></div><img class="ps-ufo" src="assets/img/ufo.webp" alt=""><img class="ps-cow" src="assets/img/cow.webp" alt=""></div>
+      <div class="ph-txt"><span>PHASE 03</span><h3>BEAMED</h3><p>Meme raids, holder art drops, CoinGecko &amp; CMC.</p></div>
+    </div>
+    <div class="ph" data-reveal>
+      <div class="ph-scene s4"><img class="ps-ufo" src="assets/img/ufo.webp" alt=""><i class="ps-eyes"></i></div>
+      <div class="ph-txt"><span>PHASE 04</span><h3>MOTHERSHIP</h3><p>CEX listings. The whole herd goes up.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER / TELEPORT ================= -->
+<footer class="foot" id="footer">
+  <canvas class="holo-gl" id="footGL"></canvas>
+  <div class="foot-inner">
+    <img class="foot-ufo" src="assets/img/ufo.webp" alt="" aria-hidden="true">
+    <h2 class="foot-title holo-text" data-reveal>TELEPORT</h2>
+
+    <nav class="tp-grid" aria-label="Jump to section">
+      <a class="tp" href="#top" data-scroll><i>00</i><b>HOME</b></a>
+      <a class="tp" href="#lore" data-scroll><i>01</i><b>LORE</b></a>
+      <a class="tp" href="#abduction" data-scroll><i>✦</i><b>BEAM</b></a>
+      <a class="tp" href="#dimensions" data-scroll><i>02</i><b>DIMENSIONS</b></a>
+      <a class="tp" href="#buy" data-scroll><i>03</i><b>HOW TO BUY</b></a>
+      <a class="tp" href="#chart" data-scroll><i>04</i><b>CHART</b></a>
+      <a class="tp" href="#phases" data-scroll><i>05</i><b>ROADMAP</b></a>
+    </nav>
+
+    <div class="foot-btns">
+      <a class="jelly jelly--main" data-link="pumpFunUrl" target="_blank" rel="noopener"><svg><use href="#i-pill"/></svg><span>PUMP.FUN</span></a>
+      <a class="jelly jelly--dex" data-link="dexUrl" target="_blank" rel="noopener"><svg><use href="#i-chart"/></svg><span>DEX</span></a>
+      <a class="jelly jelly--soc" data-link="telegramUrl" target="_blank" rel="noopener"><svg><use href="#i-tg"/></svg><span>TELEGRAM</span></a>
+      <a class="jelly jelly--soc" data-link="twitterUrl" target="_blank" rel="noopener"><svg><use href="#i-x"/></svg><span>X</span></a>
+    </div>
+
+    <button class="ca-pod" type="button" data-copy-ca>
+      <span class="ca-tag">CA</span><span class="ca-val" data-ca>YOUR_CONTRACT_ADDRESS_HERE</span>
+      <span class="ca-btn"><svg class="ic-copy"><use href="#i-copy"/></svg><svg class="ic-ok"><use href="#i-check"/></svg></span>
+    </button>
+
+    <p class="disc">$MOO is a memecoin with no intrinsic value or expectation of financial return. Not financial advice. © MOO//PHASE</p>
+  </div>
+</footer>
+</main>
+
+<a href="#top" class="to-top" data-scroll aria-label="Back to top"><svg><use href="#i-up"/></svg></a>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
